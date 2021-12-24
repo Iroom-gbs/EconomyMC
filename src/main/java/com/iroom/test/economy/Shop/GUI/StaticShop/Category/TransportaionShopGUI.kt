@@ -1,4 +1,4 @@
-package com.iroom.test.economy.Shop.GUI.StaticShop
+package com.iroom.test.economy.Shop.GUI.StaticShop.Category
 
 import com.iroom.test.economy.Shop.GUI.StaticShop.StaticShopGUI.Companion.createStaticShopItem
 import com.iroom.test.economy.Shop.GUI.StaticShop.StaticShopGUI.Companion.openStaticShopGui
@@ -18,7 +18,7 @@ class TransportaionShopGUI {
     companion object
     {
         fun openTransportationShopGui(player: Player,page:Int) {
-            openInventory(player,setTransportaionGui(page))
+            openInventory(player, setTransportaionGui(page))
         }
 
         fun setTransportaionGui(page:Int): Inventory {

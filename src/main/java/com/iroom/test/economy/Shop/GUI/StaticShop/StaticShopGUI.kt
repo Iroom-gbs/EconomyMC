@@ -1,14 +1,14 @@
 package com.iroom.test.economy.Shop.GUI.StaticShop
 
 import com.iroom.test.economy.Shop.GUI.MenuGUI.Companion.openMenuGui
-import com.iroom.test.economy.Shop.GUI.StaticShop.BrewingShopGUI.Companion.openBrewingShopGui
-import com.iroom.test.economy.Shop.GUI.StaticShop.BuildingShopGUI.Companion.openBuildingShopGui
-import com.iroom.test.economy.Shop.GUI.StaticShop.DecorationShopGUI.Companion.openDecorationShopGui
-import com.iroom.test.economy.Shop.GUI.StaticShop.FoodShopGUI.Companion.openFoodShopGui
-import com.iroom.test.economy.Shop.GUI.StaticShop.MiscellaneousShopGUI.Companion.openMiscellaneousShopGui
-import com.iroom.test.economy.Shop.GUI.StaticShop.RedStoneShopGUI.Companion.openRedStoneShopGui
-import com.iroom.test.economy.Shop.GUI.StaticShop.ToolShopGUI.Companion.openToolShopGui
-import com.iroom.test.economy.Shop.GUI.StaticShop.TransportaionShopGUI.Companion.openTransportationShopGui
+import com.iroom.test.economy.Shop.GUI.StaticShop.Category.BrewingShopGUI.Companion.openBrewingShopGui
+import com.iroom.test.economy.Shop.GUI.StaticShop.Category.BuildingShopGUI.Companion.openBuildingShopGui
+import com.iroom.test.economy.Shop.GUI.StaticShop.Category.DecorationShopGUI.Companion.openDecorationShopGui
+import com.iroom.test.economy.Shop.GUI.StaticShop.Category.FoodShopGUI.Companion.openFoodShopGui
+import com.iroom.test.economy.Shop.GUI.StaticShop.Category.MiscellaneousShopGUI.Companion.openMiscellaneousShopGui
+import com.iroom.test.economy.Shop.GUI.StaticShop.Category.RedStoneShopGUI.Companion.openRedStoneShopGui
+import com.iroom.test.economy.Shop.GUI.StaticShop.Category.ToolShopGUI.Companion.openToolShopGui
+import com.iroom.test.economy.Shop.GUI.StaticShop.Category.TransportaionShopGUI.Companion.openTransportationShopGui
 import com.iroom.test.economy.Shop.Shop
 import com.iroom.test.economy.Shop.Shop.Companion.createShopItem
 import com.iroom.test.economy.Shop.Shop.Companion.openInventory

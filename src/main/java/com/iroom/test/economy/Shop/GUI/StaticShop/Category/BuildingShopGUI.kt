@@ -1,46 +1,37 @@
-package com.iroom.test.economy.Shop.GUI.StaticShop
+package com.iroom.test.economy.Shop.GUI.StaticShop.Category
 
 import com.iroom.test.economy.Shop.GUI.StaticShop.StaticShopGUI.Companion.createStaticShopItem
 import com.iroom.test.economy.Shop.GUI.StaticShop.StaticShopGUI.Companion.openStaticShopGui
-import com.iroom.test.economy.Shop.Shop
 import com.iroom.test.economy.Shop.Shop.Companion.createGuiItem
 import com.iroom.test.economy.Shop.Shop.Companion.openInventory
 import com.iroom.test.economy.Shop.ShopItem
 import com.iroom.test.economy.Shop.ShopItem.Companion.ItemList
-import com.iroom.test.economy.Shop.ShopItem.Companion.NumberOfBuildingBlock
-import com.iroom.test.economy.Shop.ShopItem.Companion.NumberOfDecorationBlock
 import org.bukkit.Bukkit
 import org.bukkit.Material
 import org.bukkit.entity.Player
 import org.bukkit.inventory.Inventory
-import org.bukkit.inventory.ItemFlag
-import org.bukkit.inventory.ItemStack
 
-class DecorationShopGUI {
+class BuildingShopGUI {
     companion object
     {
-        fun openDecorationShopGui(player: Player,page:Int) {
-            openInventory(player,setDecorationShopGui(page))
+        fun openBuildingShopGui(player: Player,page:Int) {
+            openInventory(player, setBuildingShopGui(page))
         }
 
-        fun setDecorationShopGui(page:Int): Inventory {
-            val inv = Bukkit.createInventory(null,54,"장식블록 상점")
-            val noii = NumberOfBuildingBlock
-            val koii = NumberOfBuildingBlock + NumberOfDecorationBlock
+        fun setBuildingShopGui(page:Int): Inventory {
+            val inv = Bukkit.createInventory(null,54,"건축블록 상점")
             when(page)
             {
                 1->
                 {
                     for(i:Int in 0..44)
                     {
-                        if(i+noii+(page-1)*45 < koii)
-                        {
-                            val item = ItemList[i+noii+(page-1)*45]
-                            inv.setItem(
-                                i,
-                                createStaticShopItem(item)
-                            )
-                        }
+                        val item = ItemList[i+(page-1)*45]
+                        if(i+(page-1)*45 < ShopItem.NumberOfBuildingBlock)
+                        inv.setItem(
+                            i,
+                            createStaticShopItem(item)
+                        )
                     }
 
                     inv.setItem(
@@ -78,14 +69,12 @@ class DecorationShopGUI {
                 {
                     for(i:Int in 0..44)
                     {
-                        if(i+noii+(page-1)*45 < koii)
-                        {
-                            val item = ItemList[i+noii+(page-1)*45]
+                        val item = ItemList[i+(page-1)*45]
+                        if(i+(page-1)*45 < ShopItem.NumberOfBuildingBlock)
                             inv.setItem(
                                 i,
                                 createStaticShopItem(item)
                             )
-                        }
                     }
 
                     inv.setItem(
@@ -121,14 +110,12 @@ class DecorationShopGUI {
                 {
                     for(i:Int in 0..44)
                     {
-                        if(i+noii+(page-1)*45 < koii)
-                        {
-                            val item = ItemList[i+noii+(page-1)*45]
+                        val item = ItemList[i+(page-1)*45]
+                        if(i+(page-1)*45 < ShopItem.NumberOfBuildingBlock)
                             inv.setItem(
                                 i,
                                 createStaticShopItem(item)
                             )
-                        }
                     }
 
                     inv.setItem(
@@ -164,13 +151,13 @@ class DecorationShopGUI {
             return inv
         }
 
-        fun getBuildingShopPage(inv:Inventory): Int?
+        fun getDecorationShopPage(inv:Inventory): Int?
         {
             val pageitem = inv.getItem(48)
             return pageitem?.itemMeta?.displayName?.toInt()
         }
 
-        fun clickDecorationShopGui(player:Player,slot:Int,page:Int)
+        fun clickBuildingShopGui(player:Player,slot:Int,page:Int)
         {
             when(page)
             {
@@ -178,21 +165,21 @@ class DecorationShopGUI {
                     when(slot)
                     {
                         49->openStaticShopGui(player)
-                        53->openDecorationShopGui(player,page+1)
+                        53-> openBuildingShopGui(player,page+1)
                         else->return
                     }
                 2->
                     when(slot)
                     {
-                        45-> openDecorationShopGui(player,page-1)
+                        45-> openBuildingShopGui(player,page-1)
                         49-> openStaticShopGui(player)
-                        53-> openDecorationShopGui(player,page+1)
+                        53-> openBuildingShopGui(player,page+1)
                         else->return
                     }
                 3->
                     when(slot)
                     {
-                        45-> openDecorationShopGui(player,page-1)
+                        45-> openBuildingShopGui(player,page-1)
                         49-> openStaticShopGui(player)
                         else->return
                     }
