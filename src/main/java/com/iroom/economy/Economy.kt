@@ -1,8 +1,8 @@
-package com.iroom.test
+package com.iroom.economy
 
-import com.iroom.test.DataManager.Companion.loadData
-import com.iroom.test.DataManager.Companion.saveData
-import com.iroom.test.economy.Shop.Shop
+import com.iroom.economy.data.DataManager.Companion.loadData
+import com.iroom.economy.data.DataManager.Companion.saveData
+import com.iroom.economy.shop.Shop
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.Material
@@ -14,7 +14,7 @@ import org.bukkit.inventory.ItemFlag
 import org.bukkit.inventory.ItemStack
 import org.bukkit.plugin.java.JavaPlugin
 
-class Test : JavaPlugin() {
+class Economy : JavaPlugin() {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean
     {
         //서버 종료
@@ -22,8 +22,7 @@ class Test : JavaPlugin() {
         {
             if(sender.name == "zlfn")
             {
-                val command = "stop"
-                Bukkit.dispatchCommand(Bukkit.getServer().consoleSender,command)
+                Bukkit.dispatchCommand(Bukkit.getServer().consoleSender, "stop")
                 return true
             }
         }
@@ -41,8 +40,8 @@ class Test : JavaPlugin() {
         //상점 주는 명령어 (테스트)
         if(command.name == "shop")
         {
-            var shop = ItemStack(Material.NETHER_STAR)
-            var meta = shop.itemMeta
+            val shop = ItemStack(Material.NETHER_STAR)
+            val meta = shop.itemMeta
             meta?.addEnchant(Enchantment.LUCK,1,true)
             meta?.setDisplayName("메뉴".plus(ChatColor.GOLD))
             meta?.addItemFlags(ItemFlag.HIDE_ENCHANTS)
@@ -57,14 +56,14 @@ class Test : JavaPlugin() {
 
     companion object
     {
-        lateinit var instance:Test
+        lateinit var instance:Economy
     }
 
     override fun onEnable() {
         this.getCommand("safestop")
         this.getCommand("safesave")
         loadData()
-        server.pluginManager.registerEvents(EvListener(),this)
+        server.pluginManager.registerEvents(EventListener(),this)
         server.pluginManager.registerEvents(Shop(), this)
         instance = this
         logger.info("Loded!")

@@ -1,4 +1,4 @@
-package com.iroom.test.economy
+package com.iroom.economy.data.money
 
 import org.bukkit.Bukkit
 import org.bukkit.entity.Player
@@ -20,40 +20,29 @@ class Money {
         var NP = emptyMap<UUID,Int>().toMutableMap()
 
         //돈 데이터 저장
-        fun saveMoney(path:String):Boolean
-        {
-            try
-            {
+        fun saveMoney(path:String):Boolean = try {
                 var out = BukkitObjectOutputStream(GZIPOutputStream(FileOutputStream(path)))
                 out.writeObject(NP)
                 out.close()
                 Bukkit.getConsoleSender().sendMessage("Saved money...")
-                return true
-            }
-            catch (e: IOException)
-            {
+                true
+            } catch (e: IOException) {
                 e.printStackTrace()
                 Bukkit.getConsoleSender().sendMessage("Failed to save money!")
-                return false
+                false
             }
-        }
 
         //돈 데이터 로드
-        fun loadMoney(path:String):Boolean
-        {
-            try {
+        fun loadMoney(path:String):Boolean = try {
                 var ins = BukkitObjectInputStream(GZIPInputStream(FileInputStream(path)))
                 NP = ins.readObject() as MutableMap<UUID, Int>
                 ins.close()
                 Bukkit.getConsoleSender().sendMessage("Loaded money...")
-                return true
-            }
-            catch(e:Exception)
-            {
+                true
+            } catch(e:Exception) {
                 Bukkit.getConsoleSender().sendMessage("Failed to load money!")
-                return false
+                false
             }
-        }
 
         //플레이어의 보드를 업데이트
         fun updateBoard(player: Player)

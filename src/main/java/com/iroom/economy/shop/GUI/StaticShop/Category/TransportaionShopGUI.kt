@@ -1,32 +1,30 @@
-package com.iroom.test.economy.Shop.GUI.StaticShop.Category
+package com.iroom.economy.shop.GUI.StaticShop.Category
 
-import com.iroom.test.economy.Shop.GUI.StaticShop.StaticShopGUI.Companion.createStaticShopItem
-import com.iroom.test.economy.Shop.GUI.StaticShop.StaticShopGUI.Companion.openStaticShopGui
-import com.iroom.test.economy.Shop.Shop.Companion.createGuiItem
-import com.iroom.test.economy.Shop.Shop.Companion.openInventory
-import com.iroom.test.economy.Shop.ShopItem.Companion.ItemList
-import com.iroom.test.economy.Shop.ShopItem.Companion.NumberOfBuildingBlock
-import com.iroom.test.economy.Shop.ShopItem.Companion.NumberOfDecorationBlock
-import com.iroom.test.economy.Shop.ShopItem.Companion.NumberOfFoodBlock
-import com.iroom.test.economy.Shop.ShopItem.Companion.NumberOfMiscellaneousBlock
-import com.iroom.test.economy.Shop.ShopItem.Companion.NumberOfRedStoneBlock
-import com.iroom.test.economy.Shop.ShopItem.Companion.NumberOfTransportaionBlock
+import com.iroom.economy.shop.GUI.StaticShop.StaticShopGUI.Companion.createStaticShopItem
+import com.iroom.economy.shop.GUI.StaticShop.StaticShopGUI.Companion.openStaticShopGui
+import com.iroom.economy.shop.Shop.Companion.createGuiItem
+import com.iroom.economy.shop.Shop.Companion.openInventory
+import com.iroom.economy.shop.ShopItem.Companion.ItemList
+import com.iroom.economy.shop.ShopItem.Companion.NumberOfBuildingBlock
+import com.iroom.economy.shop.ShopItem.Companion.NumberOfDecorationBlock
+import com.iroom.economy.shop.ShopItem.Companion.NumberOfRedStoneBlock
+import com.iroom.economy.shop.ShopItem.Companion.NumberOfTransportaionBlock
 import org.bukkit.Bukkit
 import org.bukkit.Material
 import org.bukkit.entity.Player
 import org.bukkit.inventory.Inventory
 
-class FoodShopGUI {
+class TransportaionShopGUI {
     companion object
     {
-        fun openFoodShopGui(player: Player,page:Int) {
-            openInventory(player, setFoodShopGui(page))
+        fun openTransportationShopGui(player: Player,page:Int) {
+            openInventory(player, setTransportaionGui(page))
         }
 
-        fun setFoodShopGui(page:Int): Inventory {
-            val inv = Bukkit.createInventory(null,54,"식료품 상점")
-            val noii = NumberOfBuildingBlock+ NumberOfDecorationBlock+ NumberOfRedStoneBlock + NumberOfTransportaionBlock + NumberOfMiscellaneousBlock
-            val koii = NumberOfBuildingBlock + NumberOfDecorationBlock+ NumberOfRedStoneBlock + NumberOfTransportaionBlock + NumberOfMiscellaneousBlock + NumberOfFoodBlock
+        fun setTransportaionGui(page:Int): Inventory {
+            val inv = Bukkit.createInventory(null,54,"수송 상점")
+            val noii = NumberOfBuildingBlock+ NumberOfDecorationBlock + NumberOfRedStoneBlock
+            val koii = NumberOfBuildingBlock + NumberOfDecorationBlock+ NumberOfRedStoneBlock + NumberOfTransportaionBlock
             when(page)
             {
                 1->
@@ -78,13 +76,13 @@ class FoodShopGUI {
             return inv
         }
 
-        fun getFoodShopPage(inv:Inventory): Int?
+        fun getTransportationShopPage(inv:Inventory): Int?
         {
             val pageitem = inv.getItem(48)
             return pageitem?.itemMeta?.displayName?.toInt()
         }
 
-        fun clickFoodShopGui(player:Player,slot:Int,page:Int)
+        fun clickTransportationShopGui(player:Player,slot:Int,page:Int)
         {
             when(page)
             {

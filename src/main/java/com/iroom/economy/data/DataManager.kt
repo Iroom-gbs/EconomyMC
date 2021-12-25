@@ -1,8 +1,8 @@
-package com.iroom.test
+package com.iroom.economy.data
 
-import com.iroom.test.economy.Money.Companion.loadMoney
-import com.iroom.test.economy.Money.Companion.saveMoney
-import com.iroom.test.economy.Shop.ShopItem.Companion.initItemList
+import com.iroom.economy.data.money.Money.Companion.loadMoney
+import com.iroom.economy.data.money.Money.Companion.saveMoney
+import com.iroom.economy.shop.ShopItem.Companion.initItemList
 import org.bukkit.Bukkit
 
 class DataManager {

@@ -1,9 +1,9 @@
-package com.iroom.test.economy.Shop.GUI
+package com.iroom.economy.shop.GUI
 
-import com.iroom.test.economy.Money.Companion.mutMoney
-import com.iroom.test.economy.Money.Companion.setMoney
-import com.iroom.test.economy.Shop.GUI.MenuGUI.Companion.openMenuGui
-import com.iroom.test.economy.Shop.Shop.Companion.openInventory
+import com.iroom.economy.data.money.Money.Companion.mutMoney
+import com.iroom.economy.data.money.Money.Companion.setMoney
+import com.iroom.economy.shop.GUI.MenuGUI.Companion.openMenuGui
+import com.iroom.economy.shop.Shop.Companion.openInventory
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.Material
