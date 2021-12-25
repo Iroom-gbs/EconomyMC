@@ -1,4 +1,4 @@
-package com.iroom.test.economy.Shop
+package com.iroom.economy.shop
 
 import org.bukkit.Material
 

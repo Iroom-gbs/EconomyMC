@@ -1,9 +1,9 @@
-package com.iroom.test.economy.Shop.GUI
+package com.iroom.economy.shop.GUI
 
-import com.iroom.test.economy.Shop.GUI.DebugGUI.Companion.openDebugGui
-import com.iroom.test.economy.Shop.Shop.Companion.openInventory
-import com.iroom.test.economy.Shop.GUI.StaticShop.StaticShopGUI.Companion.openStaticShopGui
-import com.iroom.test.economy.Shop.Shop
+import com.iroom.economy.shop.GUI.DebugGUI.Companion.openDebugGui
+import com.iroom.economy.shop.Shop.Companion.openInventory
+import com.iroom.economy.shop.GUI.StaticShop.StaticShopGUI.Companion.openStaticShopGui
+import com.iroom.economy.shop.Shop
 import org.bukkit.Bukkit
 import org.bukkit.Material
 import org.bukkit.entity.Player

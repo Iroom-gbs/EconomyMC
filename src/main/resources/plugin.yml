@@ -1,7 +1,8 @@
-name: Test
+name: Economy
 version: '${version}'
-main: com.iroom.test.Test
+main: com.iroom.economy.Economy
 api-version: 1.16
+depend: [ Kotlin ]
 commands:
   safestop:
     description: 데이터를 저장하고 서버를 종료

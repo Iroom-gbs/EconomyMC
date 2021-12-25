@@ -1,25 +1,25 @@
-package com.iroom.test.economy.Shop
+package com.iroom.economy.shop
 
-import com.iroom.test.economy.Shop.GUI.DebugGUI.Companion.clickDebugGui
-import com.iroom.test.economy.Shop.GUI.MenuGUI.Companion.clickMenuGui
-import com.iroom.test.economy.Shop.GUI.MenuGUI.Companion.openMenuGui
-import com.iroom.test.economy.Shop.GUI.StaticShop.Category.BrewingShopGUI.Companion.clickBrewingShopGui
-import com.iroom.test.economy.Shop.GUI.StaticShop.Category.BrewingShopGUI.Companion.getBrewingShopPage
-import com.iroom.test.economy.Shop.GUI.StaticShop.Category.BuildingShopGUI.Companion.clickBuildingShopGui
-import com.iroom.test.economy.Shop.GUI.StaticShop.Category.BuildingShopGUI.Companion.getDecorationShopPage
-import com.iroom.test.economy.Shop.GUI.StaticShop.Category.DecorationShopGUI.Companion.clickDecorationShopGui
-import com.iroom.test.economy.Shop.GUI.StaticShop.Category.DecorationShopGUI.Companion.getBuildingShopPage
-import com.iroom.test.economy.Shop.GUI.StaticShop.Category.FoodShopGUI.Companion.clickFoodShopGui
-import com.iroom.test.economy.Shop.GUI.StaticShop.Category.FoodShopGUI.Companion.getFoodShopPage
-import com.iroom.test.economy.Shop.GUI.StaticShop.Category.MiscellaneousShopGUI.Companion.clickMiscellaneousShopGui
-import com.iroom.test.economy.Shop.GUI.StaticShop.Category.MiscellaneousShopGUI.Companion.getMiscellaneousShopPage
-import com.iroom.test.economy.Shop.GUI.StaticShop.Category.RedStoneShopGUI.Companion.clickRedStoneShopGui
-import com.iroom.test.economy.Shop.GUI.StaticShop.Category.RedStoneShopGUI.Companion.getRedStoneShopPage
-import com.iroom.test.economy.Shop.GUI.StaticShop.StaticShopGUI.Companion.clickStaticShopGui
-import com.iroom.test.economy.Shop.GUI.StaticShop.Category.ToolShopGUI.Companion.clickToolShopGui
-import com.iroom.test.economy.Shop.GUI.StaticShop.Category.ToolShopGUI.Companion.getToolShopPage
-import com.iroom.test.economy.Shop.GUI.StaticShop.Category.TransportaionShopGUI.Companion.clickTransportationShopGui
-import com.iroom.test.economy.Shop.GUI.StaticShop.Category.TransportaionShopGUI.Companion.getTransportationShopPage
+import com.iroom.economy.shop.GUI.DebugGUI.Companion.clickDebugGui
+import com.iroom.economy.shop.GUI.MenuGUI.Companion.clickMenuGui
+import com.iroom.economy.shop.GUI.MenuGUI.Companion.openMenuGui
+import com.iroom.economy.shop.GUI.StaticShop.Category.BrewingShopGUI.Companion.clickBrewingShopGui
+import com.iroom.economy.shop.GUI.StaticShop.Category.BrewingShopGUI.Companion.getBrewingShopPage
+import com.iroom.economy.shop.GUI.StaticShop.Category.BuildingShopGUI.Companion.clickBuildingShopGui
+import com.iroom.economy.shop.GUI.StaticShop.Category.BuildingShopGUI.Companion.getDecorationShopPage
+import com.iroom.economy.shop.GUI.StaticShop.Category.DecorationShopGUI.Companion.clickDecorationShopGui
+import com.iroom.economy.shop.GUI.StaticShop.Category.DecorationShopGUI.Companion.getBuildingShopPage
+import com.iroom.economy.shop.GUI.StaticShop.Category.FoodShopGUI.Companion.clickFoodShopGui
+import com.iroom.economy.shop.GUI.StaticShop.Category.FoodShopGUI.Companion.getFoodShopPage
+import com.iroom.economy.shop.GUI.StaticShop.Category.MiscellaneousShopGUI.Companion.clickMiscellaneousShopGui
+import com.iroom.economy.shop.GUI.StaticShop.Category.MiscellaneousShopGUI.Companion.getMiscellaneousShopPage
+import com.iroom.economy.shop.GUI.StaticShop.Category.RedStoneShopGUI.Companion.clickRedStoneShopGui
+import com.iroom.economy.shop.GUI.StaticShop.Category.RedStoneShopGUI.Companion.getRedStoneShopPage
+import com.iroom.economy.shop.GUI.StaticShop.StaticShopGUI.Companion.clickStaticShopGui
+import com.iroom.economy.shop.GUI.StaticShop.Category.ToolShopGUI.Companion.clickToolShopGui
+import com.iroom.economy.shop.GUI.StaticShop.Category.ToolShopGUI.Companion.getToolShopPage
+import com.iroom.economy.shop.GUI.StaticShop.Category.TransportaionShopGUI.Companion.clickTransportationShopGui
+import com.iroom.economy.shop.GUI.StaticShop.Category.TransportaionShopGUI.Companion.getTransportationShopPage
 import org.bukkit.Material
 import org.bukkit.enchantments.Enchantment
 import org.bukkit.entity.HumanEntity
@@ -53,7 +53,7 @@ class Shop:Listener {
     @EventHandler
     fun shopEvent(event: InventoryClickEvent)
     {
-        var clickitem: ItemStack? = event.currentItem
+        val clickitem: ItemStack? = event.currentItem
         if(event.click == ClickType.DOUBLE_CLICK) return
         if(clickitem == null || clickitem.type == Material.AIR) return
         when(event.view.title)

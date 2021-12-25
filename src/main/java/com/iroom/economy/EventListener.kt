@@ -1,12 +1,12 @@
-package com.iroom.test
+package com.iroom.economy
 
-import com.iroom.test.economy.Money
-import com.iroom.test.economy.Money.Companion.updateBoard
+import com.iroom.economy.data.money.Money
+import com.iroom.economy.data.money.Money.Companion.updateBoard
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerJoinEvent
 
-class EvListener : Listener {
+class EventListener : Listener {
     @EventHandler
     fun OnPlayerJoin(event:PlayerJoinEvent)
     {
